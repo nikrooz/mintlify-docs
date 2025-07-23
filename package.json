@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cd docs && mint dev"
+    "dev": "concurrently -k -n WATCH,APP -c yellow,cyan \"node loadScripts.js\" \"cd docs && mint dev\" "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.2.0"
+  }
 }
